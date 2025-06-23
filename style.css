@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form input,
+form select,
+form button {
+    margin-right: 5px;
+}
+
+#shopping-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#shopping-table th,
+#shopping-table td {
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    text-align: left;
+}
