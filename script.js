@@ -1,14 +1,22 @@
+'use strict';
+
+function sanitize(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.textContent;
+}
+
 document.getElementById('item-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    const name = document.getElementById('item-name').value.trim();
-    const pieces = document.getElementById('item-piece').value;
-    const amount = document.getElementById('item-amount').value;
-    const unit = document.getElementById('item-unit').value;
-    const quality = document.getElementById('item-quality').value.trim();
-    const brand = document.getElementById('item-brand').value.trim();
-    const store = document.getElementById('item-store').value;
+    const name = sanitize(document.getElementById('item-name').value.trim());
+    const pieces = sanitize(document.getElementById('item-piece').value);
+    const amount = sanitize(document.getElementById('item-amount').value);
+    const unit = sanitize(document.getElementById('item-unit').value);
+    const quality = sanitize(document.getElementById('item-quality').value.trim());
+    const brand = sanitize(document.getElementById('item-brand').value.trim());
+    const store = sanitize(document.getElementById('item-store').value);
 
-    const tbody = document.querySelector('#shopping-table tbody');
+    const tbody = document.querySelector('#shopping-list tbody');
     const row = document.createElement('tr');
 
     const checkCell = document.createElement('td');

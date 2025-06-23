@@ -2,54 +2,65 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
     <title>Einkaufsliste</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Einkaufsliste</h1>
-<form id="item-form">
-    <input type="text" id="item-name" placeholder="Artikel" list="items-list" required>
-    <datalist id="items-list">
-        <option value="Apfel"></option>
-        <option value="Brot"></option>
-        <option value="Milch"></option>
-    </datalist>
-    <input type="number" id="item-piece" placeholder="Stück" min="1">
-    <input type="number" id="item-amount" placeholder="Menge" step="0.01" min="0">
-    <select id="item-unit">
-        <option value="g">g</option>
-        <option value="kg">kg</option>
-        <option value="ml">ml</option>
-        <option value="l">l</option>
-    </select>
-    <input type="text" id="item-quality" placeholder="Qualität">
-    <input type="text" id="item-brand" placeholder="Marke">
-    <select id="item-store">
-        <option value="Hofer">Hofer</option>
-        <option value="Billa">Billa</option>
-        <option value="Spar">Spar</option>
-        <option value="Interspar">Interspar</option>
-        <option value="Eurospar">Eurospar</option>
-        <option value="Action">Action</option>
-    </select>
-    <button type="submit">Hinzufügen</button>
-</form>
-<table id="shopping-table">
-    <thead>
-    <tr>
-        <th>Erledigt</th>
-        <th>Artikel</th>
-        <th>Stück</th>
-        <th>Menge</th>
-        <th>Einheit</th>
-        <th>Qualität</th>
-        <th>Marke</th>
-        <th>Geschäft</th>
-    </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
+<header>
+    <h1>Meine Einkaufsliste</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#liste">Liste</a>
+    </nav>
+</header>
+<main>
+    <form id="item-form" autocomplete="off">
+        <input type="text" id="item-name" placeholder="Artikel" list="items-list" required maxlength="50">
+        <datalist id="items-list">
+            <option value="Apfel"></option>
+            <option value="Brot"></option>
+            <option value="Milch"></option>
+        </datalist>
+        <input type="number" id="item-piece" placeholder="Stück" min="1" value="1">
+        <input type="number" id="item-amount" placeholder="Menge" step="0.01" min="0" value="0">
+        <select id="item-unit">
+            <option value="g">g</option>
+            <option value="kg">kg</option>
+            <option value="ml">ml</option>
+            <option value="l">l</option>
+        </select>
+        <input type="text" id="item-quality" placeholder="Qualität" maxlength="50">
+        <input type="text" id="item-brand" placeholder="Marke" maxlength="50">
+        <select id="item-store">
+            <option value="Hofer">Hofer</option>
+            <option value="Billa">Billa</option>
+            <option value="Spar">Spar</option>
+            <option value="Interspar">Interspar</option>
+            <option value="Eurospar">Eurospar</option>
+            <option value="Action">Action</option>
+        </select>
+        <button type="submit">Hinzufügen</button>
+    </form>
+
+    <table id="shopping-list">
+        <thead>
+        <tr>
+            <th>Erledigt</th>
+            <th>Artikel</th>
+            <th>Stück</th>
+            <th>Menge</th>
+            <th>Einheit</th>
+            <th>Qualität</th>
+            <th>Marke</th>
+            <th>Geschäft</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</main>
 <script src="script.js"></script>
 </body>
 </html>
